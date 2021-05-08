@@ -16,7 +16,9 @@ This purpose of this project is to analyze stock data from twelve different comp
 
 
 ## Results
+There are the images of the [2017 Stock Data](Resources/VBA_Challenge_2017.png) and the [2018 Stock Data](Resources/VBA_Challenge_2018.png).
 
+Looking at the two years side by side, there may not actually be a correlation between the Total Daily Volume, or amount that a stock has been traded, and the yearly return. It was hypothesized that a higher Daily Volume would correlate to a higher Yearly Return. However, nearly half the stocks -- DQ, HASI, SEDG, TERP, and VLSR -- had an increase in Total Daily Volume fro m 2017 tp 2018, but a significant decrease in the Yearly Return.
 
 
 ## Summary
