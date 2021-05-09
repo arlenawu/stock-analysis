@@ -5,12 +5,16 @@
 This project analyzes stock market data from twelve companies -- AY, CSIQ, DQ, ENPH, FSLR, HASI, JKS, RUN, SEDG, SPWR, TERP, and VSLR -- to find their Total Daily Volume and Yearly Returns for the years 2017 and 2018. Two sets of code were written to accomplish this, with the main difference between them being their use of for loops.
 
 ### Purpose
-This purpose of this project is to see if there is any correlation between a stock's Total Daily Volumes and its Yearly Return, and whether or not a stocks Daily Volume is a good metric to use in predicting the profit of a stock. This project is also an exercise in comparing two different ways of coding for the same solution.
+This purpose of this project is to see if there is any correlation between a stock's Total Daily Volumes and its Yearly Return, and whether or not a stocks Daily Volume is a good metric to use in predicting the profit of a stock. This project is also an exercise in comparing two different ways of coding for the same solution -- a base set of code and its improved refactored version.
 
 ## Analysis
+### Organization of the Raw Data
+The raw data set is divided into two separate datasets, one for each year, 2017 and 2018. Both datasets are sorted first by stock name, and then by date from oldest to newest.
 
 ### Overview of Original Code
-The first set of code 
+The code overall is fairly straightforward. First, a table was created and formatted on a new sheet which is designed to hold all the final calculated information of the Totaly Daily Volumes and the Yearly Returns for each stock. Then, an array of strings was created to act as a list of the names of each stock. Then two for loops were created -- one to iterate through the array of stock names, and the other to iterate through the dataset for the specified year.
+
+So, for each stock name, the code would iterate through the dataset in search of that stock name and all of its data. It wuold calculate the Total Daily Volume by summing the daily volume from every single data point of that stock, and it would calculate the Yearly Return by dividing the stock's ending price (the price of the last data point listed for that stock) by the starting price (the price of the first data point listed for that stock) and subtracting 1 from the result. And then, the Total Daily Volume and Yearly Return would be printed into the table on the new sheet.
 
 ### Overview of Refactored Code
 The refactored code opted to 
