@@ -12,9 +12,9 @@ This purpose of this project is to see if there is any correlation between a sto
 The raw data set is divided into two separate datasets, one for each year, 2017 and 2018. Both datasets are sorted first by stock name, and then by date from oldest to newest.
 
 ### Overview of Original Code
-The code overall is fairly straightforward. First, a table was created and formatted on a new sheet which is designed to hold all the final calculated information of the Totaly Daily Volumes and the Yearly Returns for each stock. Then, an array of strings was created to act as a list of the names of each stock. Then two for loops were created -- one to iterate through the array of stock names, and the other to iterate through the dataset for the specified year.
+The code overall is fairly straightforward. First, a table was created and formatted on a new sheet which is designed to hold all the final calculated information of the Total Daily Volumes and the Yearly Returns for each stock. Then, an array of strings was created to act as a list of the names of each stock. Then two for loops were created -- one to iterate through the array of stock names, and the other to iterate through the dataset for the specified year.
 
-So, for each stock name, the code would iterate through the dataset in search of that stock name and all of its data. It wuold calculate the Total Daily Volume by summing the daily volume from every single data point of that stock, and it would calculate the Yearly Return by dividing the stock's Ending Price (the price of the last data point listed for that stock) by the Starting Price (the price of the first data point listed for that stock) and subtracting 1 from the result. And then, the Total Daily Volume and Yearly Return would be printed into the table on the new sheet.
+So, for each stock name, the code would iterate through the dataset in search of that stock name and all of its data. It would calculate the Total Daily Volume by summing the daily volume from every single data point of that stock, and it would calculate the Yearly Return by dividing the stock's Ending Price (the price of the last data point listed for that stock) by the Starting Price (the price of the first data point listed for that stock) and subtracting 1 from the result. And then, the Total Daily Volume and Yearly Return would be printed into the table on the new sheet.
 
 Below is a snippet of the for loops used in the code.
 
@@ -55,10 +55,10 @@ Below is a snippet of the for loops used in the code.
         
     Next i
 
-To finish things off, a button was placed on the spreadsheet that the user could click on to begin the analysis, and upon cicking the button a dialogue box was set to pop up to ask the user which year they would like to run the analysis on (2017 or 2018).
+To finish things off, a button was placed on the spreadsheet that the user could click on to begin the analysis, and upon clicking the button a dialogue box was set to pop up to ask the user which year they would like to run the analysis on (2017 or 2018).
 
 ### Overview of Refactored Code
-The refactored code focused on reducing the number of iterations through the dataset that the for loops in the original code made. Instead of iterating through the data once for each of the twelve stock names, or 'tickers', for a total of twelve times, the refactored code only needs to interate through all the data *once* while calculating the Total Daily Volume and the Yearly Returns for all twelve stocks at the same time.
+The refactored code focused on reducing the number of iterations through the dataset that the for loops in the original code made. Instead of iterating through the data once for each of the twelve stock names, or 'tickers', for a total of twelve times, the refactored code only needs to iterate through all the data *once* while calculating the Total Daily Volume and the Yearly Returns for all twelve stocks at the same time.
 
 The simplification process of the for loops was first begun by creating three new arrays -- tickerVolumes, tickerStartingPrices, and tickerEndingPrices. Each of these three arrays contain twelve entries to represent each of the 12 stocks, or 'tickers', and to hold the values of their Total Daily Volumes, Starting Prices, and Ending Prices.
 
@@ -109,7 +109,7 @@ Finally, a for loop was written to iterate through the three arrays simultaneous
 ## Results of the Data
 These are the tables of the [2017 Stock Data](Resources/VBA_Challenge_2017.png) and the [2018 Stock Data](Resources/VBA_Challenge_2018.png), which show the Total Daily Volume and the Yearly Return for each of the 12 stocks.
 
-It was hypothesized that a higher Daily Volume would correlate to a higher Yearly Return, however, looking at the two years side by side, there does not appear be any strong correlation between the Total Daily Volume and the yearly return. From the years 2017 to 2018, nearly half the stocks -- DQ, HASI, SEDG, TERP, and VLSR -- had an increase in Total Daily Volume, but a significant decrease in the Yearly Return. Even within the same year, Total Daily Volume does not reflect how high the Yearly Return might be.
+It was hypothesized that a higher Daily Volume would correlate to a higher Yearly Return, however, looking at the two years side by side, there does not appear be any strong correlation between the Total Daily Volume and the yearly return. From the years 2017 to 2018, nearly half the stocks -- DQ, HASI, SEDG, TERP, and VLSR -- had an increase in Total Daily Volume, but a significant decrease in the Yearly Return. Even within the same year, Total Daily Volume does not reflect how high the Yearly Return might be. This is a clear indication that using the Total Daily Volume is not a reliable way to predict a stock's profitability and Yearly Returns.
 
 
 ## Summary
@@ -118,7 +118,7 @@ It was hypothesized that a higher Daily Volume would correlate to a higher Yearl
 
 Generally, refactoring code is very useful for improving a code's efficiency and readability, which can improve performance and clean up bad structures in the code such as redundant or unused code. (Cuelogic, 2014) It's a way of keeping the code as simple and clean as possible for long term maintenance, and is important to do before adding any major new features or changes so that the addition of the new code does not risk making things too convoluted and messy. (Stone, 2018) It's also helpful in debugging and preventing further defects and bugs from being created. (Ershad, 2017)
 
-For the most part, the disadvantages to refactoring code tends to be situational. Refactoring should not be done when there isn't enough time or funds to complete a project, because it can be quite time-consuming. (Stone, 2018) It can also be quite risky when the code for a program is very large, or when the refactorer isn't the same person who wrote the original code. New bugs could be introduced, which may harm the long term stability of the software or program. (Doug, 2008) It is important to plan carefully about when to refactor code and the extent to which it should be done before beginning. (Stone, 2018)
+For the most part, the disadvantages to refactoring code tends to be situational. Refactoring should not be done when there isn't enough time or funds to complete a project, because it can be quite time-consuming. (Stone, 2018) It can also be quite risky when the code for a program is very large, or when the refactorer isn't the same person who wrote the original code. New bugs could be introduced, which may harm the long-term stability of the software or program. (Doug, 2008) It is important to plan carefully about when to refactor code and the extent to which it should be done before beginning. (Stone, 2018)
 
 - Advantages and disadvantages of the original and refactored VBA script
 
