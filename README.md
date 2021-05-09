@@ -14,7 +14,7 @@ The raw data set is divided into two separate datasets, one for each year, 2017 
 ### Overview of Original Code
 The code overall is fairly straightforward. First, a table was created and formatted on a new sheet which is designed to hold all the final calculated information of the Totaly Daily Volumes and the Yearly Returns for each stock. Then, an array of strings was created to act as a list of the names of each stock. Then two for loops were created -- one to iterate through the array of stock names, and the other to iterate through the dataset for the specified year.
 
-So, for each stock name, the code would iterate through the dataset in search of that stock name and all of its data. It wuold calculate the Total Daily Volume by summing the daily volume from every single data point of that stock, and it would calculate the Yearly Return by dividing the stock's ending price (the price of the last data point listed for that stock) by the starting price (the price of the first data point listed for that stock) and subtracting 1 from the result. And then, the Total Daily Volume and Yearly Return would be printed into the table on the new sheet.
+So, for each stock name, the code would iterate through the dataset in search of that stock name and all of its data. It wuold calculate the Total Daily Volume by summing the daily volume from every single data point of that stock, and it would calculate the Yearly Return by dividing the stock's Ending Price (the price of the last data point listed for that stock) by the Starting Price (the price of the first data point listed for that stock) and subtracting 1 from the result. And then, the Total Daily Volume and Yearly Return would be printed into the table on the new sheet.
 
 Below is a snippet of the for loops used in the code.
 
@@ -58,7 +58,15 @@ Below is a snippet of the for loops used in the code.
 To finish things off, a button was placed on the spreadsheet that the user could click on to begin the analysis, and upon cicking the button a dialogue box was set to pop up to ask the user which year they would like to run the analysis on (2017 or 2018).
 
 ### Overview of Refactored Code
-The refactored code opted to 
+The refactored code focused on reducing the number of iterations through the dataset that the for loops in the original code made. Instead of iterating through the data once for each of the twelve stock names, or 'tickers', for a total of twelve times, the refactored code only needs to interate through all the data *once* while calculating the Total Daily Volume and the Yearly Returns for all twelve stocks at the same time.
+
+The simplification process of the for loops was first begun by creating three new arrays -- tickerVolumes, tickerStartingPrices, and tickerEndingPrices. Each of these three arrays contain twelve entries to represent each of the 12 stocks, or 'tickers', and to hold the values of their Total Daily Volumes, Starting Prices, and Ending Prices.
+
+    Dim tickerVolumes(12) As Long
+    Dim tickerStartingPrices(12) As Single
+    Dim tickerEndingPrices(12) As Single
+
+Next, the previous set of nested for loops from the original code was eliminated and replaced with a single for loop that would iterate once through the dataset. Within this for loop, the three arrays, tickerVolumes, tickerStartingPrices, and tickerEndingPrices, were set to have their values modified as the code iterated its way through the dataset. By the end of the loop, all three arrays should contain the correct Total Daily Volumes, Starting Prices, and Ending Prices for each of the twelve stocks/tickers.
 
     'Loop over all the rows in the spreadsheet
     For i = 2 To RowCount
@@ -85,7 +93,7 @@ The refactored code opted to
     
     Next i
 
-And the final Total Daily Volumes and Yearly Returns were printed out in a separate for loop.
+Finally, a for loop was written to iterate through the three arrays simultaneously, and print out the stock names, Total Daily Volumes, and Yearly Returns into a neat table in the spreadsheet.
 
     'Loop through arrays to output the Ticker (Stock Name), Total Daily Volume, and Return.
     For i = 0 To 11
@@ -114,7 +122,7 @@ For the most part, the disadvantages to refactoring code tends to be situational
 
 - Advantages and disadvantages of the original and refactored VBA script
 
-The refactored code is significantly more efficient in calculating the Total Daily Volume and Starting and Ending Returns for each stock, because it only uses a single for loop instead of nesting one loop inside the other. So instead of looping through all of the data 12 times, once for each stock, it only has to loop through it once, which allows the calculations to run faster.
+The refactored code is significantly more efficient in calculating the Total Daily Volume and Starting and Ending Returns for each stock, because it only uses a single for loop instead of nesting one loop inside the other. So instead of looping through all of the data 12 times, once for each stock, it only has to loop through it once, which allows the code to run faster.
 
 The disadvantage to both codes however, is that they require the data to be completely sorted by the type of stock and then by their date from oldest to newest. If any of the rows are scrambled so that this information is no longer in order, the calculations will fail and return incorrect information.
 
