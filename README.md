@@ -106,7 +106,7 @@ Finally, a for loop was written to iterate through the three arrays simultaneous
 
     Next i
 
-## Results
+## Results of the Data
 These are the tables of the [2017 Stock Data](Resources/VBA_Challenge_2017.png) and the [2018 Stock Data](Resources/VBA_Challenge_2018.png), which show the Total Daily Volume and the Yearly Return for each of the 12 stocks.
 
 It was hypothesized that a higher Daily Volume would correlate to a higher Yearly Return, however, looking at the two years side by side, there does not appear be any strong correlation between the Total Daily Volume and the yearly return. From the years 2017 to 2018, nearly half the stocks -- DQ, HASI, SEDG, TERP, and VLSR -- had an increase in Total Daily Volume, but a significant decrease in the Yearly Return. Even within the same year, Total Daily Volume does not reflect how high the Yearly Return might be.
@@ -122,9 +122,11 @@ For the most part, the disadvantages to refactoring code tends to be situational
 
 - Advantages and disadvantages of the original and refactored VBA script
 
-The refactored code is significantly more efficient in calculating the Total Daily Volume and Starting and Ending Returns for each stock, because it only uses a single for loop instead of nesting one loop inside the other. So instead of looping through all of the data 12 times, once for each stock, it only has to loop through it once, which allows the code to run faster.
+The refactored code is significantly more efficient in calculating the Total Daily Volume and Starting and Ending Returns for each stock, because it only uses a single for loop instead of nesting one loop inside the other. So instead of looping through all of the data 12 times, once for each stock, it only has to loop through it once, which allows the code to run much faster.
 
-The disadvantage to both codes however, is that they require the data to be completely sorted by the type of stock and then by their date from oldest to newest. If any of the rows are scrambled so that this information is no longer in order, the calculations will fail and return incorrect information.
+In this particular context, there aren't any real disadvantages to the refactored code when compared to the original code. The refactored code quite soundly defeats the original in every metric, from run time to cleanliness of the code.
+
+Both codes do suffer from some drawbacks, however. They both require the data to be completely sorted by the type of stock and then by their date from oldest to newest. If any of the rows are scrambled so that this information is no longer in order, the calculations will fail and return incorrect information. They also currently require all twelve tickers to specifically named within the code, much like "magic numbers", though in this case they would probably be called "magic names". The upside is that both of these issues should be relatively simple to fix in potential future versions of the code.
 
 ## Citations
 Cuelogic. (2014, August 27). *What is refactoring and Why is it important?* Cuelogic Technologies Pvt. Ltd. https://www.cuelogic.com/blog/what-is-refactoring-and-why-is-it-important. 
