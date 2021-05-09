@@ -25,17 +25,19 @@ It was hypothesized that a higher Daily Volume would correlate to a higher Yearl
 
 - Advantages and disadvantages of refactoring code in general
 
-Generally, refactoring code is very useful for improving a code's efficiency and readability.
+Generally, refactoring code is very useful for improving a code's efficiency and readability, which can improve performance and clean up bad structures in the code such as redundant or unused code. (Cuelogic, 2014) It's a way of keeping the code as simple and clean as possible for long term maintenance, and is important to do before adding any major new features or changes so that the addition of the new code does not risk making things too convoluted and messy. (Stone, 2018)
 
-For the most part, disadvantages to refactoring code tends to be situational. Refactoring should not be done when there isn't enough time or funds to complete a project, because it can be quite time-consuming. (Stone, 2018) It can also be quite risky when the code for a program is very large, or when the refactorer isn't the same person who wrote the original code. New bugs could be introduced, which may harm the long term stability of the software or program. (Doug, 2008)
+For the most part, the disadvantages to refactoring code tends to be situational. Refactoring should not be done when there isn't enough time or funds to complete a project, because it can be quite time-consuming. (Stone, 2018) It can also be quite risky when the code for a program is very large, or when the refactorer isn't the same person who wrote the original code. New bugs could be introduced, which may harm the long term stability of the software or program. (Doug, 2008) It is important to plan carefully about when to refactor code and the extent to which it should be done before beginning. (Stone, 2018)
 
 - Advantages and disadvantages of the original and refactored VBA script
 
 The refactored code is significantly more efficient in calculating the Total Daily Volume and Starting and Ending Returns for each stock, because it only uses a single for loop instead of nesting one loop inside the other. So instead of looping through all of the data 12 times, once for each stock, it only has to loop through it once, which allows the calculations to run faster.
 
-The disadvantage to both of the codes however, is that they require the data to be completely sorted by the type of stock. If any of the rows are scrambled so that the information for each stock is not grouped together, the calculations will fail and return incorrect information.
+The disadvantage to both codes however, is that they require the data to be completely sorted by the type of stock and then by their date from oldest to newest. If any of the rows are scrambled so that this information is no longer in order, the calculations will fail and return incorrect information.
 
 ## Citations
-Doug, T. (2008, September 28). Re: What are the limitations of refactoring? [Discussion post]. StackOverflow. https://stackoverflow.com/questions/146124/what-are-the-limitations-of-refactoring?rq=1
+Cuelogic. (2014, August 27). *What is refactoring and Why is it important?* Cuelogic Technologies Pvt. Ltd. https://www.cuelogic.com/blog/what-is-refactoring-and-why-is-it-important. 
 
-Stone, S. (2018, September 27). Code Refactoring Best Practices: When (and When Not) to Do It. altexsoft. https://www.altexsoft.com/blog/engineering/code-refactoring-best-practices-when-and-when-not-to-do-it/. 
+Doug, T. (2008, September 28). *Re: What are the limitations of refactoring?* [Discussion post]. StackOverflow. https://stackoverflow.com/a/146143.
+
+Stone, S. (2018, September 27). *Code Refactoring Best Practices: When (and When Not) to Do It.* altexsoft. https://www.altexsoft.com/blog/engineering/code-refactoring-best-practices-when-and-when-not-to-do-it/. 
