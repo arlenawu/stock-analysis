@@ -114,13 +114,13 @@ It was hypothesized that a higher Daily Volume would correlate to a higher Yearl
 
 ## Summary
 
-- Advantages and disadvantages of refactoring code in general
+### Advantages and disadvantages of refactoring code in general
 
 Generally, refactoring code is very useful for improving a code's efficiency and readability, which can improve performance and clean up bad structures in the code such as redundant or unused code. (Cuelogic, 2014) It's a way of keeping the code as simple and clean as possible for long term maintenance, and is important to do before adding any major new features or changes so that the addition of the new code does not risk making things too convoluted and messy. (Stone, 2018) It's also helpful in debugging and preventing further defects and bugs from being created. (Ershad, 2017)
 
 For the most part, the disadvantages to refactoring code tends to be situational. Refactoring should not be done when there isn't enough time or funds to complete a project, because it can be quite time-consuming. (Stone, 2018) It can also be quite risky when the code for a program is very large, or when the refactorer isn't the same person who wrote the original code. New bugs could be introduced, which may harm the long-term stability of the software or program. (Doug, 2008) It is important to plan carefully about when to refactor code and the extent to which it should be done before beginning. (Stone, 2018)
 
-- Advantages and disadvantages of the original and refactored VBA script
+### Advantages and disadvantages of the original and refactored VBA script
 
 The refactored code is significantly more efficient in calculating the Total Daily Volume and Starting and Ending Returns for each stock, because it only uses a single for loop instead of nesting one loop inside the other. So instead of looping through all of the data 12 times, once for each stock, it only has to loop through it once, which allows the code to run much faster.
 
